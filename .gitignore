@@ -3,7 +3,7 @@
 *.dll
 *.so
 *.dylib
-/_example/main
+/_example/bin
 
 # Test binary, build with `go test -c`
 *.test
