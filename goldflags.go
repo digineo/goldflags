@@ -2,6 +2,7 @@ package goldflags
 
 import (
 	"fmt"
+	"runtime"
 	"strconv"
 	"time"
 )
@@ -61,7 +62,8 @@ func BuildString() string {
 // Banner returns a pretty formatted version information banner
 func Banner(appName string) string {
 	banner := fmt.Sprintf(banner, appName)
-	banner += fmt.Sprintf(extraBannerLine, "Version", VersionString())
-	banner += fmt.Sprintf(extraBannerLine, "Build  ", BuildString())
+	banner += fmt.Sprintf(extraBannerLine, "Version    ", VersionString())
+	banner += fmt.Sprintf(extraBannerLine, "Build      ", BuildString())
+	banner += fmt.Sprintf(extraBannerLine, "Go Version ", runtime.Version())
 	return banner
 }
